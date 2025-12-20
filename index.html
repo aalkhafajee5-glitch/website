@@ -1,54 +1,116 @@
-<!DOCTYPE html>
+ذ<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أجنحة البراق للسياحة</title>
+    <title>أجنحة البراق للسياحة والسفر</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Tajawal:wght@400;700&display=swap');
         body { font-family: 'Tajawal', sans-serif; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('plane.jpg'); background-size: cover; background-position: center; }
+        .font-amiri { font-family: 'Amiri', serif; }
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('plane.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+        }
+        .gallery-img { transition: transform 0.3s ease; }
+        .gallery-img:hover { transform: scale(1.03); }
     </style>
 </head>
 <body class="bg-gray-50">
 
-    <nav class="bg-blue-900 text-white p-4 shadow-lg flex justify-between items-center px-8">
-        <h1 class="text-2xl font-bold font-amiri">أجنحة البراق</h1>
-        <div class="flex gap-4">
-            <a href="https://wa.me/9647827256622" target="_blank" class="bg-green-600 px-4 py-2 rounded text-sm">واتساب</a>
-            <a href="https://www.facebook.com/share/19ozLoKMS2/" target="_blank" class="bg-blue-700 px-4 py-2 rounded text-sm">فيسبوك</a>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i data-lucide="plane" class="text-blue-600 w-8 h-8"></i>
+                <span class="text-2xl font-bold text-blue-900 font-amiri">أجنحة البراق</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-gray-700 font-bold">
+                <a href="#" class="hover:text-blue-600">الرئيسية</a>
+                <a href="#services" class="hover:text-blue-600">خدماتنا</a>
+                <a href="#gallery" class="hover:text-blue-600">معرض الصور</a>
+                <a href="#contact" class="hover:text-blue-600">اتصل بنا</a>
+            </div>
         </div>
     </nav>
 
-    <header class="hero h-80 flex flex-col items-center justify-center text-white text-center">
-        <h2 class="text-4xl font-bold mb-4 font-amiri">للحجز والاستفسار</h2>
-        <p class="text-xl">نرحب بكم في رحلاتنا الإيمانية</p>
+    <header class="hero h-[500px] flex items-center justify-center text-center text-white px-4">
+        <div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 font-amiri text-yellow-400">أجنحة البراق للسياحة والسفر</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto">رحلات العمرة والزيارة بأفضل الخدمات وأرقى مستويات الراحة لضيوف الرحمن</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://wa.me/9647827256622" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 transition shadow-lg">
+                    <i data-lucide="message-circle"></i> مراسلة واتساب للحجز
+                </a>
+                <a href="https://www.facebook.com/share/19ozLoKMS2/" target="_blank" class="bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 transition shadow-lg">
+                    <i data-lucide="facebook"></i> تابعنا على فيسبوك
+                </a>
+            </div>
+        </div>
     </header>
 
-    <main class="py-12 container mx-auto px-4">
-        <h3 class="text-2xl font-bold text-center mb-10 text-blue-900 border-b-2 border-blue-200 pb-4">معرض صور رحلاتنا</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <img src="img1.jpg" class="w-full h-60 object-cover rounded-lg shadow hover:scale-105 transition cursor-pointer" onclick="window.open(this.src)">
-            <img src="img2.jpg" class="w-full h-60 object-cover rounded-lg shadow hover:scale-105 transition cursor-pointer" onclick="window.open(this.src)">
-            <img src="img3.jpg" class="w-full h-60 object-cover rounded-lg shadow hover:scale-105 transition cursor-pointer" onclick="window.open(this.src)">
-            <img src="img4.jpg" class="w-full h-60 object-cover rounded-lg shadow hover:scale-105 transition cursor-pointer" onclick="window.open(this.src)">
-            <img src="img5.jpg" class="w-full h-60 object-cover rounded-lg shadow hover:scale-105 transition cursor-pointer" onclick="window.open(this.src)">
-            <img src="img6.jpg" class="w-full h-60 object-cover rounded-lg shadow hover:scale-105 transition cursor-pointer" onclick="window.open(this.src)">
-            <img src="img7.jpg" class="w-full h-60 object-cover rounded-lg shadow hover:scale-105 transition cursor-pointer" onclick="window.open(this.src)">
+    <section id="services" class="py-16 container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 font-amiri text-blue-900">خدماتنا المتميزة</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-600 text-center">
+                <i data-lucide="moon" class="w-12 h-12 text-blue-600 mx-auto mb-4"></i>
+                <h3 class="text-2xl font-bold mb-3 font-amiri text-blue-800">العمرة والزيارة</h3>
+                <p class="text-gray-600">تنظيم رحلات إيمانية ميسرة تشمل الفيزا والسكن والنقل الحديث.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-600 text-center">
+                <i data-lucide="hotel" class="w-12 h-12 text-blue-600 mx-auto mb-4"></i>
+                <h3 class="text-2xl font-bold mb-3 font-amiri text-blue-800">حجز فنادق</h3>
+                <p class="text-gray-600">أفضل خيارات السكن في مكة المكرمة والمدينة المنورة بأسعار تنافسية.</p>
+                </div>
+            <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-600 text-center">
+                <i data-lucide="bus" class="w-12 h-12 text-blue-600 mx-auto mb-4"></i>
+                <h3 class="text-2xl font-bold mb-3 font-amiri text-blue-800">نقل حديث</h3>
+                <p class="text-gray-600">أسطول من الباصات السياحية الحديثة لضمان راحتكم طوال الرحلة.</p>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="bg-gray-800 text-white p-10 text-center">
-        <p class="mb-4">للتواصل المباشر (اتصال فقط): 07827256622</p>
-        <p class="text-green-400">للتواصل عبر واتساب: 009647827256622</p>
-        <div class="mt-6 border-t border-gray-700 pt-6 opacity-50 text-xs">
-            © 2025 أجنحة البراق - جميع الحقوق محفوظة
+    <section id="gallery" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 font-amiri text-blue-900">معرض صور رحلاتنا</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <img src="img1.jpg" class="gallery-img rounded-xl shadow-lg h-64 w-full object-cover cursor-pointer" onclick="window.open(this.src)">
+                <img src="img2.jpg" class="gallery-img rounded-xl shadow-lg h-64 w-full object-cover cursor-pointer" onclick="window.open(this.src)">
+                <img src="img3.jpg" class="gallery-img rounded-xl shadow-lg h-64 w-full object-cover cursor-pointer" onclick="window.open(this.src)">
+                <img src="img4.jpg" class="gallery-img rounded-xl shadow-lg h-64 w-full object-cover cursor-pointer" onclick="window.open(this.src)">
+                <img src="img5.jpg" class="gallery-img rounded-xl shadow-lg h-64 w-full object-cover cursor-pointer" onclick="window.open(this.src)">
+                <img src="img6.jpg" class="gallery-img rounded-xl shadow-lg h-64 w-full object-cover cursor-pointer" onclick="window.open(this.src)">
+                <img src="img7.jpg" class="gallery-img rounded-xl shadow-lg h-64 w-full object-cover cursor-pointer" onclick="window.open(this.src)">
+            </div>
+            <p class="text-center mt-6 text-gray-500 italic text-sm">اضغط على الصورة لمشاهدتها بالحجم الكبير</p>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8 font-amiri text-yellow-400">تواصل معنا الآن</h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-10 max-w-4xl mx-auto">
+                <div class="flex flex-col items-center gap-3 p-6 bg-blue-800 rounded-xl shadow-inner">
+                    <i data-lucide="phone" class="text-yellow-400 w-10 h-10"></i>
+                    <p class="text-lg font-bold">للاتصال المباشر (فقط)</p>
+                    <span class="text-2xl font-bold ltr tracking-wider">07827256622</span>
+                </div>
+                <div class="flex flex-col items-center gap-3 p-6 bg-emerald-700 rounded-xl shadow-inner">
+                    <i data-lucide="message-circle" class="text-white w-10 h-10"></i>
+                    <p class="text-lg font-bold text-white">للحجز عبر واتساب</p>
+                    <span class="text-2xl font-bold ltr tracking-wider">009647827256622</span>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 pt-8 opacity-60">
+                <p>© 2025 أجنحة البراق للسياحة والسفر - العراق</p>
+            </div>
         </div>
     </footer>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
