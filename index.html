@@ -1,286 +1,96 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>أجنحة البراق للحج والعمرة ونقل المسافرين</title>
-    <!-- Tailwind CSS CDN -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أجنحة البراق للسياحة والسفر</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            animation: {
-              'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            },
-            fontFamily: {
-              amiri: ['Amiri', 'serif'],
-              inter: ['Inter', 'sans-serif'],
-            }
-          }
-        }
-      }
-    </script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-      body {
-        font-family: 'Inter', 'Amiri', serif;
-      }
-      .font-amiri {
-        font-family: 'Amiri', serif;
-      }
-      /* Smooth scrolling for anchor links */
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-
-    <!-- Import Map for ESM Modules -->
-    <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@19.0.0",
-        "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-        "lucide-react": "https://esm.sh/lucide-react@0.460.0"
-      }
-    }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-
-    <script type="module">
-      import React, { useState } from 'react';
-      import ReactDOM from 'react-dom/client';
-      import { 
-        MapPin, 
-        Plane, 
-        Star, 
-        Menu, 
-        X, 
-        MessageSquare, 
-        Phone, 
-        Mail 
-      } from 'lucide-react';
-
-      // --- Constants ---
-      const WHATSAPP_NUMBER = '9647801083052';
-      const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
-      const AGENCY_ADDRESS = 'محافظة ذي قار - الاسكان الصناعي - محطة خيرات ذي قار';
-
-      const NAV_ITEMS = [
-        { label: 'Home', arabicLabel: 'الرئيسية', href: '#' },
-        { label: 'Services', arabicLabel: 'خدماتنا', href: '#features' },
-        { label: 'Contact', arabicLabel: 'اتصل بنا', href: '#contact' },
-      ];
-
-      const FEATURES = [
-        {
-          id: 'haram',
-          title: 'Al-Masjid al-Haram',
-          arabicTitle: 'المسجد الحرام',
-          imageUrl: 'https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=1000',
-          icon: React.createElement(MapPin, { className: "w-8 h-8 text-amber-500" })
-        },
-        {
-          id: 'nabawi',
-          title: 'Al-Masjid an-Nabawi',
-          arabicTitle: 'المسجد النبوي',
-          imageUrl: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=1000',
-          icon: React.createElement(Star, { className: "w-8 h-8 text-amber-500" })
-        },
-        {
-          id: 'travel',
-          title: 'Comfortable Air Travel',
-          arabicTitle: 'طيران مريح',
-         imageUrl: 'plane.png',
-          icon: React.createElement(Plane, { className: "w-8 h-8 text-amber-500" })
+        body { font-family: 'Tajawal', sans-serif; }
+        .font-amiri { font-family: 'Amiri', serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('plane.png');
+            background-size: cover;
+            background-position: center;
         }
-      ];
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i data-lucide="plane" class="text-blue-600 w-8 h-8"></i>
+                <span class="text-2xl font-bold text-blue-900 font-amiri">أجنحة البراق</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-gray-700 font-bold">
+                <a href="#" class="hover:text-blue-600">الرئيسية</a>
+                <a href="#services" class="hover:text-blue-600">خدماتنا</a>
+                <a href="#gallery" class="hover:text-blue-600">معرض الصور</a>
+            </div>
+        </div>
+    </nav>
 
-      // --- Components ---
+    <header class="hero-bg h-[500px] flex items-center justify-center text-center text-white px-4">
+        <div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 font-amiri">أجنحة البراق للسياحة والسفر</h1>
+            <p class="text-xl md:text-2xl mb-8">رحلات العمرة والزيارة بأفضل الخدمات</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://wa.me/9647827256622" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 transition">
+                    <i data-lucide="message-circle"></i> مراسلة واتساب للحجز
+                </a>
+                <a href="https://www.facebook.com/share/19ozLoKMS2/" target="_blank" class="bg-blue-800 hover:bg-blue-900 text-white px-8 py-3 rounded-full font-bold flex items-center gap-2 transition">
+                    <i data-lucide="facebook"></i> تابعنا على فيسبوك
+                </a>
+            </div>
+        </div>
+    </header>
 
-      const Header = () => {
-        const [isOpen, setIsOpen] = useState(false);
+    <section id="services" class="py-16 container mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-blue-600 text-center">
+                <i data-lucide="moon" class="w-10 h-10 text-blue-600 mx-auto mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">العمرة والزيارة</h3>
+                <p class="text-gray-600 text-sm">برامج متكاملة مريحة للمعتمرين.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-blue-600 text-center">
+                <i data-lucide="hotel" class="w-10 h-10 text-blue-600 mx-auto mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">حجز الفنادق</h3>
+                <p class="text-gray-600 text-sm">أفضل السكن القريب من الحرمين.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-blue-600 text-center">
+                <i data-lucide="bus" class="w-10 h-10 text-blue-600 mx-auto mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">نقل حديث</h3>
+                <p class="text-gray-600 text-sm">باصات سياحية حديثة ومكيفة.</p>
+            </div>
+        </div>
+    </section>
 
-        return React.createElement('nav', { className: "bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-emerald-50" },
-          React.createElement('div', { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" },
-            React.createElement('div', { className: "flex justify-between items-center h-20" },
-              React.createElement('div', { className: "flex items-center" },
-                React.createElement('div', { className: "flex flex-col text-right" },
-                  React.createElement('span', { className: "text-xl md:text-2xl font-bold text-emerald-900 font-amiri leading-none" }, "أجنحة البراق"),
-                  React.createElement('span', { className: "text-[10px] md:text-xs tracking-tight text-emerald-700 font-medium uppercase mt-1" }, "AL-BURAQ WINGS")
-                )
-              ),
-              React.createElement('div', { className: "hidden md:flex items-center space-x-8 space-x-reverse" },
-                NAV_ITEMS.map((item) => 
-                  React.createElement('a', {
-                    key: item.label,
-                    href: item.href,
-                    className: "text-emerald-800 hover:text-amber-600 transition-colors font-medium text-lg font-amiri"
-                  }, item.arabicLabel)
-                )
-              ),
-              React.createElement('div', { className: "md:hidden" },
-                React.createElement('button', { onClick: () => setIsOpen(!isOpen), className: "text-emerald-900 p-2" },
-                  isOpen ? React.createElement(X, { className: "w-6 h-6" }) : React.createElement(Menu, { className: "w-6 h-6" })
-                )
-              )
-            )
-          ),
-          isOpen && React.createElement('div', { className: "md:hidden bg-white border-b border-emerald-50 py-4 px-6 space-y-4" },
-            NAV_ITEMS.map((item) => 
-              React.createElement('a', {
-                key: item.label,
-                href: item.href,
-                className: "block text-emerald-800 hover:text-amber-600 text-xl font-amiri text-right py-2",
-                onClick: () => setIsOpen(false)
-              }, item.arabicLabel)
-            )
-          )
-        );
-      };
+    <section id="gallery" class="py-16 bg-blue-50">
+      <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-10 font-amiri text-blue-900">معرض صور رحلاتنا</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <img src="img1.jpg" class="rounded-lg shadow-md h-60 w-full object-cover cursor-pointer hover:opacity-80 transition" onclick="window.open(this.src)">
+                <img src="img2.jpg" class="rounded-lg shadow-md h-60 w-full object-cover cursor-pointer hover:opacity-80 transition" onclick="window.open(this.src)">
+                <img src="img3.jpg" class="rounded-lg shadow-md h-60 w-full object-cover cursor-pointer hover:opacity-80 transition" onclick="window.open(this.src)">
+                <img src="img4.jpg" class="rounded-lg shadow-md h-60 w-full object-cover cursor-pointer hover:opacity-80 transition" onclick="window.open(this.src)">
+                <img src="img5.jpg" class="rounded-lg shadow-md h-60 w-full object-cover cursor-pointer hover:opacity-80 transition" onclick="window.open(this.src)">
+                <img src="img6.jpg" class="rounded-lg shadow-md h-60 w-full object-cover cursor-pointer hover:opacity-80 transition" onclick="window.open(this.src)">
+                <img src="img7.jpg" class="rounded-lg shadow-md h-60 w-full object-cover cursor-pointer hover:opacity-80 transition" onclick="window.open(this.src)">
+            </div>
+        </div>
+    </section>
 
-      const Hero = () => {
-        return React.createElement('div', { className: "relative h-[80vh] min-h-[600px] overflow-hidden flex items-center justify-center" },
-          React.createElement('div', { 
-            className: "absolute inset-0 z-0 scale-105 animate-pulse-slow",
-            style: {
-              backgroundImage: 'url(https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=2000)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }
-          }, 
-            React.createElement('div', { className: "absolute inset-0 bg-gradient-to-b from-emerald-900/70 via-emerald-900/50 to-emerald-950/90" })
-          ),
-          React.createElement('div', { className: "relative z-10 text-center px-4 max-w-5xl mx-auto" },
-            React.createElement('h1', { className: "text-4xl md:text-7xl font-bold text-white mb-6 font-amiri leading-tight drop-shadow-lg" }, 
-              "أجنحة البراق للحج والعمرة", React.createElement('br'),
-              React.createElement('span', { className: "text-amber-400" }, "ونقل المسافرين")
-            ),
-        React.createElement('p', { className: "text-2xl md:text-3xl text-amber-400 font-bold mb-4 animate-pulse" }, "استمتع معنا على أجنحة البراق"),
-            React.createElement('p', { className: "text-xl md:text-2xl text-emerald-50 mb-10 max-w-2xl mx-auto leading-relaxed opacity-90 font-amiri" }, "رحلتكم الإيمانية تبدأ معنا، بكل طمأنينة ويسر"),   
-          React.createElement('div', { className: "flex flex-col sm:flex-row items-center justify-center gap-6" },
-              React.createElement('a', {
-                href: WHATSAPP_LINK,
-                target: "_blank",
-                rel: "noopener noreferrer",
-                className: "group flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-emerald-950 px-10 py-5 rounded-full text-2xl font-bold transition-all transform hover:scale-105 shadow-2xl font-amiri"
-              }, 
-                React.createElement(MessageSquare, { className: "w-7 h-7" }),
-                "تهمنا آراؤكم"
-              ),
-              React.createElement('a', {
-                href: "#features",
-                className: "bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 px-10 py-5 rounded-full text-xl font-medium transition-all font-amiri"
-              }, "اكتشف خدماتنا")
-            )
-          ),
-          React.createElement('div', { className: "absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" },
-            React.createElement('div', { className: "w-1 h-12 bg-gradient-to-b from-transparent to-amber-400 rounded-full opacity-60" })
-          )
-        );
-      };
+    <footer class="bg-blue-900 text-white py-10 text-center">
+        <p class="mb-4 text-lg font-bold">للاتصال المباشر والاستفسار والحجز:</p>
+        <div class="flex flex-wrap justify-center gap-6 mb-6">
+            <span class="flex items-center gap-2"><i data-lucide="phone"></i> [رقمك القديم هنا]</span>
+            <span class="flex items-center gap-2 text-emerald-400"><i data-lucide="message-circle"></i> 009647827256622</span>
+        </div>
+        <p class="text-sm opacity-70 font-amiri italic">رحلتكم الإيمانية تبدأ معنا بكل طمأنينة ويسر</p>
+    </footer>
 
-      const Features = () => {
-        return React.createElement('section', { id: "features", className: "py-24 bg-emerald-50/50" },
-          React.createElement('div', { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" },
-            React.createElement('div', { className: "text-center mb-16" },
-              React.createElement('h2', { className: "text-3xl md:text-4xl font-bold text-emerald-900 mb-4 font-amiri" }, "مميزات خدماتنا"),
-              React.createElement('div', { className: "w-24 h-1 bg-amber-500 mx-auto rounded-full" }),
-              React.createElement('p', { className: "mt-4 text-emerald-700 max-w-2xl mx-auto" }, "نقدم لكم أفضل الخدمات لضمان راحة المعتمرين والحجاج والمسافرين")
-            ),
-            React.createElement('div', { className: "grid grid-cols-1 md:grid-cols-3 gap-8" },
-              FEATURES.map((feature) => 
-                React.createElement('div', { 
-                  key: feature.id,
-                  className: "group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-emerald-100"
-                },
-                  React.createElement('div', { className: "relative h-64 overflow-hidden" },
-                    React.createElement('img', { src: feature.imageUrl, alt: feature.title, className: "w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" }),
-                    React.createElement('div', { className: "absolute inset-0 bg-gradient-to-t from-emerald-950/60 to-transparent" }),
-                    React.createElement('div', { className: "absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-2xl shadow-lg" }, feature.icon)
-                  ),
-                  React.createElement('div', { className: "p-8 text-right" },
-                    React.createElement('h3', { className: "text-2xl font-bold text-emerald-900 mb-2 font-amiri" }, feature.arabicTitle),
-                    React.createElement('p', { className: "text-emerald-600 font-medium mb-4 text-sm tracking-wide opacity-80 uppercase" }, feature.title),
-                    React.createElement('p', { className: "text-gray-600 leading-relaxed text-sm" }, "خدمة متميزة تهدف إلى توفير أقصى درجات الراحة والسكينة خلال رحلتكم المباركة.")
-                  )
-                )
-              )
-            )
-          )
-        );
-      };
-
-      const Footer = () => {
-        return React.createElement('footer', { id: "contact", className: "bg-emerald-950 text-emerald-50 py-16 border-t border-emerald-900/50" },
-          React.createElement('div', { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" },
-            React.createElement('div', { className: "grid grid-cols-1 md:grid-cols-3 gap-12 text-right" },
-              React.createElement('div', { className: "order-3 md:order-1" },
-                React.createElement('h4', { className: "text-2xl font-bold mb-6 font-amiri text-amber-400" }, "أجنحة البراق"),
-                React.createElement('p', { className: "text-emerald-200/80 leading-relaxed mb-6 font-amiri" }, "وكالتكم الرائدة لخدمات الحج والعمرة والرحلات الدولية ونقل المسافرين. نضع راحتكم في المقام الأول ونرافقكم في رحلة العمر.")
-              ),
-              React.createElement('div', { className: "order-2" },
-                React.createElement('h4', { className: "text-xl font-bold mb-6 font-amiri" }, "تواصل معنا"),
-                React.createElement('ul', { className: "space-y-6 text-emerald-200/80" },
-                  React.createElement('li', { className: "flex items-start justify-end gap-3" },
-                    React.createElement('span', { className: "text-lg font-inter" }, "+" + WHATSAPP_NUMBER),
-                    React.createElement(Phone, { className: "w-5 h-5 mt-1 text-amber-500 shrink-0" })
-                  ),
-                  React.createElement('li', { className: "flex items-start justify-end gap-3" },
-                    React.createElement('span', { className: "text-lg font-inter" }, "info@alburaqwings.com"),
-                    React.createElement(Mail, { className: "w-5 h-5 mt-1 text-amber-500 shrink-0" })
-                  ),
-                  React.createElement('li', { className: "flex items-start justify-end gap-3" },
-                    React.createElement('span', { className: "text-lg leading-snug font-amiri" }, AGENCY_ADDRESS),
-                    React.createElement(MapPin, { className: "w-5 h-5 mt-1 text-amber-500 shrink-0" })
-                  )
-                )
-              ),
-              React.createElement('div', { className: "order-1 md:order-3" },
-                React.createElement('h4', { className: "text-xl font-bold mb-6 font-amiri text-amber-400" }, "تهمنا آراؤكم"),
-                React.createElement('p', { className: "text-emerald-200/80 mb-6 font-amiri" }, "نحن نقدر تعليقاتكم ومقترحاتكم لتحسين خدماتنا باستمرار. تواصل معنا عبر واتساب الآن."),
-                React.createElement('a', {
-                  href: WHATSAPP_LINK,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  className: "inline-flex items-center gap-2 bg-emerald-800 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-bold transition-all font-amiri shadow-lg group"
-                }, 
-                  React.createElement(MessageSquare, { className: "w-5 h-5 text-amber-400" }),
-                  "أرسل لنا ملاحظاتك"
-                )
-              )
-            ),
-            React.createElement('div', { className: "border-t border-emerald-900 mt-16 pt-8 flex flex-col md:flex-row-reverse justify-between items-center text-emerald-500 text-sm" },
-              React.createElement('p', { className: "font-amiri" }, `© ${new Date().getFullYear()} أجنحة البراق للحج والعمرة ونقل المسافرين. جميع الحقوق محفوظة.`),
-              React.createElement('div', { className: "flex gap-6 mt-4 md:mt-0 font-amiri" },
-                React.createElement('a', { href: "#", className: "hover:text-amber-500 transition-colors" }, "سياسة الخصوصية"),
-                React.createElement('a', { href: "#", className: "hover:text-amber-500 transition-colors" }, "شروط الخدمة")
-              )
-            )
-          )
-        );
-      };
-
-      const App = () => {
-        return React.createElement('div', { className: "min-h-screen bg-white" },
-          React.createElement(Header),
-          React.createElement('main', null,
-            React.createElement(Hero),
-            React.createElement(Features)
-          ),
-          React.createElement(Footer)
-        );
-      };
-
-      // --- Mounting ---
-      const root = ReactDOM.createRoot(document.getElementById('root'));
-      root.render(React.createElement(App));
-    </script>
-  </body>
-
+    <script>lucide.createIcons();</script>
+</body>
 </html>
